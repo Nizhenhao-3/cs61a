@@ -1,0 +1,5 @@
+'product-correct', (0, 66)
+'accumulate-correct', (512, 66)
+'funception-correct', (1024, 66)
+'mul_by_num-correct', (1536, 66)
+'add_results-correct', (2048, 66)
