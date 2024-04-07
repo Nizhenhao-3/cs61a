@@ -79,7 +79,7 @@ def sum_digits(y):
             break
         i=i//10
     return sum
-print(sum_digits(23))
+
 
 
 
@@ -99,5 +99,18 @@ def double_eights(n):
     False
     """
     "*** YOUR CODE HERE ***"
-    
+    num=0
+    while n!=0:
+        if n%10==8:
+            num+=1
+            n=n//10
+        else:
+            num=0
+            n=n//10
+        if num == 2:
+            return True
+
+    return False
+
+print(double_eights(8088))
 

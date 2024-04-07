@@ -95,6 +95,14 @@ def double_eights(n):
     True
     """
     "*** YOUR CODE HERE ***"
+    last=n%10
+    prev_last=n//10%10
+    if last==8 and prev_last==8:
+        return True
+    if n<88:
+        return False
+    return double_eights(n//10)
+
 
 
 
@@ -125,5 +133,20 @@ def make_onion(f, g):
     >>> can_reach_string("peach", "folding", 4)   # Not possible
     False
     """
+    def weather(x,y,limit):
+        if limit==0:
+            if x==y:
+                return True
+            else:return False
+        else:
+            if f(x)==y or g(x)==y:
+                return True
+            return weather(f(x),y,limit-1) or weather(g(x),y,limit-1)
+    return weather
+
+up = lambda x: x + 1
+double = lambda y: y * 2
+can_reach = make_onion(up, double)
+can_reach(5, 25, 4)      # 25 = up(double(double(up(5))))
 
 
